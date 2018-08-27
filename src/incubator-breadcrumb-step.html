@@ -31,7 +31,12 @@ See <a href="https://vaadin.com/license/cval-3">the website</a> for the complete
     </style>
 
     <span part="link">
-      <a href="[[href]]"><slot></slot></a>
+      <template is="dom-if" if="{{href}}">
+        <a href="[[href]]"><slot></slot></a>
+      </template>
+      <template is="dom-if" if="{{href === ''}}">
+        <slot></slot>
+      </template>
     </span>
     <span part="separator">[[separator]]</span>
   </template>
@@ -69,7 +74,8 @@ See <a href="https://vaadin.com/license/cval-3">the website</a> for the complete
             },
 
             href: {
-              type: String
+              type: String,
+              value: ''
             }
 
           };
