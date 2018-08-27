@@ -9,17 +9,31 @@ See <a href="https://vaadin.com/license/cval-3">the website</a> for the complete
 <link rel="import" href="../../polymer/polymer-element.html">
 <link rel="import" href="../../vaadin-themable-mixin/vaadin-themable-mixin.html">
 <link rel="import" href="../../vaadin-element-mixin/vaadin-element-mixin.html">
+<link rel="import" href="incubator-breadcrumb-step.html">
 
 <dom-module id="incubator-breadcrumb">
   <template>
     <style>
+      :host {
+        display: block;
+      }
+
+      [part="links-list"] {
+        list-style: none;
+        display: flex;
+        justify-content: start;
+        align-content: center;
+        align-items: center;
+      }
     </style>
 
-    <h1>Hello world</h1>
+    <div part="links-list">
+      <slot></slot>
+    </div>
   </template>
 
   <script>
-    (function() {
+    (function () {
       /**
        * `<incubator-breadcrumb>` is a template for incubator components.
        *
@@ -31,36 +45,21 @@ See <a href="https://vaadin.com/license/cval-3">the website</a> for the complete
        * @memberof Vaadin
        * @demo demo/index.html
        */
-<<<<<<< HEAD
       class IncubatorBreadcrumb extends Vaadin.ElementMixin(Vaadin.ThemableMixin(Polymer.Element)) {
-=======
-      class VaadinIncubatorElement extends Vaadin.ElementMixin(Vaadin.ThemableMixin(Polymer.Element)) {
->>>>>>> Initial commit
         static get is() {
           return 'incubator-breadcrumb';
         }
       }
 
-<<<<<<< HEAD
       customElements.define(IncubatorBreadcrumb.is, IncubatorBreadcrumb);
-=======
-      customElements.define(VaadinIncubatorElement.is, VaadinIncubatorElement);
->>>>>>> Initial commit
 
       /**
        * @namespace Vaadin
        */
-<<<<<<< HEAD
       window.Vaadin.IncubatorBreadcrumb = IncubatorBreadcrumb;
 
       if (window.Vaadin.runIfDevelopmentMode) {
         window.Vaadin.runIfDevelopmentMode('vaadin-license-checker', IncubatorBreadcrumb);
-=======
-      window.Vaadin.VaadinIncubatorElement = VaadinIncubatorElement;
-
-      if (window.Vaadin.runIfDevelopmentMode) {
-        window.Vaadin.runIfDevelopmentMode('vaadin-license-checker', VaadinIncubatorElement);
->>>>>>> Initial commit
       }
     })();
   </script>

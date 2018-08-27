@@ -3,17 +3,15 @@
 
 # &lt;incubator-breadcrumb&gt;
 
-[Live Demo ↗](https://vaadin.com/components/incubator-breadcrumb/html-examples)
-|
-[API documentation ↗](https://vaadin.com/components/incubator-breadcrumb/html-api)
+[Live Demo ↗](https://incubator.app.fi/incubator-breadcrumb)
 
-
-[&lt;incubator-breadcrumb&gt;](https://vaadin.com/components/incubator-breadcrumb) is a Web Component providing an easy way to ask the user to confirm a choice, part of the [Vaadin components](https://vaadin.com/components).
+[&lt;incubator-breadcrumb&gt;](https://vaadin.com/components/incubator-breadcrumb) is a Web Component providing an easy way to display breadcrumb on web pages.
 
 ```html
-  <incubator-breadcrumb header="Unsaved changes" confirm-text="Save" on-confirm="save"
-    cancel on-cancel="cancel" reject reject-text="Discard" on-reject="discard">
-    Do you want to save or discard your changes before navigating away?
+  <incubator-breadcrumb>
+    <incubator-breadcrumb-step separator=">" href="#">Home</incubator-breadcrumb-step>
+    <incubator-breadcrumb-step separator=">" href="#">Directory</incubator-breadcrumb-step>
+    <incubator-breadcrumb-step separator=">" href="#">Incubator Breadcrumb</incubator-breadcrumb-step>
   </incubator-breadcrumb>
 ```
 
