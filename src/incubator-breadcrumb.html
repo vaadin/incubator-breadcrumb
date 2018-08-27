@@ -9,6 +9,7 @@ See <a href="https://vaadin.com/license/cval-3">the website</a> for the complete
 <link rel="import" href="../../polymer/polymer-element.html">
 <link rel="import" href="../../vaadin-themable-mixin/vaadin-themable-mixin.html">
 <link rel="import" href="../../vaadin-element-mixin/vaadin-element-mixin.html">
+<link rel="import" href="../../iron-media-query/iron-media-query.html">
 <link rel="import" href="incubator-breadcrumb-step.html">
 
 <dom-module id="incubator-breadcrumb">
@@ -26,6 +27,9 @@ See <a href="https://vaadin.com/license/cval-3">the website</a> for the complete
         align-items: center;
       }
     </style>
+
+    <iron-media-query query="[[_phoneMediaQuery]]" query-matches="{{mobile}}">
+    </iron-media-query>
 
     <div part="links-list">
       <slot></slot>
@@ -48,6 +52,50 @@ See <a href="https://vaadin.com/license/cval-3">the website</a> for the complete
       class IncubatorBreadcrumb extends Vaadin.ElementMixin(Vaadin.ThemableMixin(Polymer.Element)) {
         static get is() {
           return 'incubator-breadcrumb';
+        }
+
+        static get properties() {
+          return {
+
+            steps: {
+              type: Array,
+              value: []
+            },
+
+            mobile: {
+              type: Boolean,
+              value: false,
+              reflectToAttribute: true,
+              observer: '_isMobile'
+            },
+
+            _phoneMediaQuery: {
+              value: '(max-width: 420px)'
+            }
+
+          };
+        }
+
+        ready() {
+          super.ready();
+          const steps = this.querySelectorAll('incubator-breadcrumb-step');
+          if (steps.length > 0) {
+            this.set('steps', steps);
+          }
+        }
+
+        _isMobile() {
+          if(this.mobile && this.steps.length > 0) {
+            this.steps.forEach(step => {
+              if(step.href && step.shift) {
+                step.style.display = 'none';
+              }
+            });
+          } else {
+            this.steps.forEach(step => {
+              step.style.display = 'block';
+            });
+          }
         }
       }
 

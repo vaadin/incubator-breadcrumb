@@ -27,7 +27,8 @@
     "vaadin-themable-mixin": "vaadin/vaadin-themable-mixin",
     "vaadin-element-mixin": "vaadin/vaadin-element-mixin",
     "vaadin-license-checker": "vaadin/license-checker",
-    "vaadin-lumo-styles": "vaadin/vaadin-lumo-styles"
+    "vaadin-lumo-styles": "vaadin/vaadin-lumo-styles",
+    "iron-media-query": "^2.1.0"
   },
   "devDependencies": {
     "iron-component-page": "^3.0.0",
