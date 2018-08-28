@@ -19,6 +19,10 @@ See <a href="https://vaadin.com/license/cval-3">the website</a> for the complete
       :host([last-step]) [part="separator"] {
         display: none;
       }
+
+      [part="separator"]::after {
+        content: '>';
+      }
     </style>
 
     <span part="link">
