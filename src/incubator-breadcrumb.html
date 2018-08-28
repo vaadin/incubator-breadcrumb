@@ -22,10 +22,10 @@ See <a href="https://vaadin.com/license/cval-3">the website</a> for the complete
     </style>
 
     <span part="link">
-      <template is="dom-if" if="{{href}}">
+      <template is="dom-if" if="[[href]]">
         <a href="[[href]]"><slot></slot></a>
       </template>
-      <template is="dom-if" if="{{href === ''}}">
+      <template is="dom-if" if="[[href === '']]">
         <slot></slot>
       </template>
     </span>
@@ -52,12 +52,6 @@ See <a href="https://vaadin.com/license/cval-3">the website</a> for the complete
 
         static get properties() {
           return {
-
-            lastStep: {
-              type: Boolean,
-              value: false,
-              reflectToAttribute: true
-            },
 
             href: {
               type: String,

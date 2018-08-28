@@ -9,9 +9,9 @@
 
 ```html
   <incubator-breadcrumbs>
-    <incubator-breadcrumb separator=">" href="#">Home</incubator-breadcrumb>
-    <incubator-breadcrumb separator=">" href="#">Directory</incubator-breadcrumb>
-    <incubator-breadcrumb separator=">" href="#">Incubator Breadcrumb</incubator-breadcrumb>
+    <incubator-breadcrumb shift href="#">Home</incubator-breadcrumb>
+    <incubator-breadcrumb href="#">Directory</incubator-breadcrumb>
+    <incubator-breadcrumb href="#">Incubator Breadcrumb</incubator-breadcrumb>
   </incubator-breadcrumbs>
 ```
 
