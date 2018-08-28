@@ -9,31 +9,27 @@ See <a href="https://vaadin.com/license/cval-3">the website</a> for the complete
 <link rel="import" href="../../polymer/polymer-element.html">
 <link rel="import" href="../../vaadin-themable-mixin/vaadin-themable-mixin.html">
 <link rel="import" href="../../vaadin-element-mixin/vaadin-element-mixin.html">
-<link rel="import" href="../../iron-media-query/iron-media-query.html">
-<link rel="import" href="incubator-breadcrumb-step.html">
+<link rel="import" href="../../vaadin-lumo-styles/typography.html">
+<link rel="import" href="../../vaadin-lumo-styles/spacing.html">
 
 <dom-module id="incubator-breadcrumb">
   <template>
-    <style>
-      :host {
-        display: block;
-      }
-
-      [part="links-list"] {
-        list-style: none;
-        display: flex;
-        justify-content: start;
-        align-content: center;
-        align-items: center;
+    <style include="lumo-typography">
+      :host(:last-of-type) [part="separator"],
+      :host([last-step]) [part="separator"] {
+        display: none;
       }
     </style>
 
-    <iron-media-query query="[[_phoneMediaQuery]]" query-matches="{{mobile}}">
-    </iron-media-query>
-
-    <div part="links-list">
-      <slot></slot>
-    </div>
+    <span part="link">
+      <template is="dom-if" if="{{href}}">
+        <a href="[[href]]"><slot></slot></a>
+      </template>
+      <template is="dom-if" if="{{href === ''}}">
+        <slot></slot>
+      </template>
+    </span>
+    <span part="separator"></span>
   </template>
 
   <script>
@@ -49,7 +45,7 @@ See <a href="https://vaadin.com/license/cval-3">the website</a> for the complete
        * @memberof Vaadin
        * @demo demo/index.html
        */
-      class IncubatorBreadcrumb extends Vaadin.ElementMixin(Vaadin.ThemableMixin(Polymer.Element)) {
+      class IncubatorBreadcrumbStep extends Vaadin.ElementMixin(Vaadin.ThemableMixin(Polymer.Element)) {
         static get is() {
           return 'incubator-breadcrumb';
         }
@@ -57,57 +53,36 @@ See <a href="https://vaadin.com/license/cval-3">the website</a> for the complete
         static get properties() {
           return {
 
-            steps: {
-              type: Array,
-              value: []
-            },
-
-            mobile: {
+            lastStep: {
               type: Boolean,
               value: false,
-              reflectToAttribute: true,
-              observer: '_isMobile'
+              reflectToAttribute: true
             },
 
-            _phoneMediaQuery: {
-              value: '(max-width: 420px)'
+            href: {
+              type: String,
+              value: ''
+            },
+
+            shift: {
+              type: Boolean,
+              value: false,
+              reflectToAttribute: true
             }
 
           };
         }
-
-        ready() {
-          super.ready();
-          const steps = this.querySelectorAll('incubator-breadcrumb-step');
-          if (steps.length > 0) {
-            this.set('steps', steps);
-          }
-        }
-
-        _isMobile() {
-          if(this.mobile && this.steps.length > 0) {
-            this.steps.forEach(step => {
-              if(step.href && step.shift) {
-                step.style.display = 'none';
-              }
-            });
-          } else {
-            this.steps.forEach(step => {
-              step.style.display = 'block';
-            });
-          }
-        }
       }
 
-      customElements.define(IncubatorBreadcrumb.is, IncubatorBreadcrumb);
+      customElements.define(IncubatorBreadcrumbStep.is, IncubatorBreadcrumbStep);
 
       /**
        * @namespace Vaadin
        */
-      window.Vaadin.IncubatorBreadcrumb = IncubatorBreadcrumb;
+      window.Vaadin.IncubatorBreadcrumbStep = IncubatorBreadcrumbStep;
 
       if (window.Vaadin.runIfDevelopmentMode) {
-        window.Vaadin.runIfDevelopmentMode('vaadin-license-checker', IncubatorBreadcrumb);
+        window.Vaadin.runIfDevelopmentMode('vaadin-license-checker', IncubatorBreadcrumbStep);
       }
     })();
   </script>
