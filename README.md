@@ -15,7 +15,7 @@
   </incubator-breadcrumbs>
 ```
 
-[<img src="https://raw.githubusercontent.com/vaadin/incubator-breadcrumbs/master/screenshot.png" width="200" alt="Screenshot of incubator-breadcrumbs">](https://vaadin.com/directory/components/vaadinincubator-breadcrumbs)
+[<img src="https://raw.githubusercontent.com/vaadin/incubator-breadcrumb/master/screenshot.png" width="200" alt="Screenshot of incubator-breadcrumbs">](https://vaadin.com/directory/components/vaadinincubator-breadcrumbs)
 
 
 ## Installation
