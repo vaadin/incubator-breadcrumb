@@ -3,10 +3,10 @@
   "pages": [
   {
     "name": "Basics",
-    "url": "incubator-breadcrumb-basic-demos",
-    "src": "incubator-breadcrumb-basic-demos.html",
+    "url": "incubator-breadcrumbs-basic-demos",
+    "src": "incubator-breadcrumbs-basic-demos.html",
     "meta": {
-      "title": "incubator-breadcrumb Basic Examples",
+      "title": "incubator-breadcrumbs Basic Examples",
       "description": "",
       "image": ""
      }

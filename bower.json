@@ -1,19 +1,19 @@
 {
-  "name": "incubator-breadcrumb",
+  "name": "incubator-breadcrumbs",
   "homepage": "https://vaadin.com/components",
   "authors": [
     "Vaadin Ltd"
   ],
-  "description": "incubator-breadcrumb",
-  "main": "incubator-breadcrumb.html",
+  "description": "incubator-breadcrumbs",
+  "main": "incubator-breadcrumbs.html",
   "keywords": [
     "Vaadin",
-    "incubator-breadcrumb",
+    "incubator-breadcrumbs",
     "web-components",
     "web-component",
     "polymer"
   ],
-  "license": "https://raw.githubusercontent.com/vaadin/incubator-breadcrumb/master/LICENSE",
+  "license": "https://raw.githubusercontent.com/vaadin/incubator-breadcrumbs/master/LICENSE",
   "ignore": [
     "**/.*",
     "node_modules",
@@ -27,7 +27,8 @@
     "vaadin-themable-mixin": "vaadin/vaadin-themable-mixin",
     "vaadin-element-mixin": "vaadin/vaadin-element-mixin",
     "vaadin-license-checker": "vaadin/license-checker",
-    "vaadin-lumo-styles": "vaadin/vaadin-lumo-styles"
+    "vaadin-lumo-styles": "vaadin/vaadin-lumo-styles",
+    "iron-media-query": "^2.1.0"
   },
   "devDependencies": {
     "iron-component-page": "^3.0.0",

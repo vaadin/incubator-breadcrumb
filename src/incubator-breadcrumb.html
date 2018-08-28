@@ -9,17 +9,35 @@ See <a href="https://vaadin.com/license/cval-3">the website</a> for the complete
 <link rel="import" href="../../polymer/polymer-element.html">
 <link rel="import" href="../../vaadin-themable-mixin/vaadin-themable-mixin.html">
 <link rel="import" href="../../vaadin-element-mixin/vaadin-element-mixin.html">
+<link rel="import" href="../../vaadin-lumo-styles/typography.html">
+<link rel="import" href="../../vaadin-lumo-styles/spacing.html">
 
 <dom-module id="incubator-breadcrumb">
   <template>
-    <style>
+    <style include="lumo-typography">
+      :host(:last-of-type) [part="separator"],
+      :host([last-step]) [part="separator"] {
+        display: none;
+      }
+
+      [part="separator"]::after {
+        content: '>';
+      }
     </style>
 
-    <h1>Hello world</h1>
+    <span part="link">
+      <template is="dom-if" if="[[href]]">
+        <a href="[[href]]"><slot></slot></a>
+      </template>
+      <template is="dom-if" if="[[href === '']]">
+        <slot></slot>
+      </template>
+    </span>
+    <span part="separator"></span>
   </template>
 
   <script>
-    (function() {
+    (function () {
       /**
        * `<incubator-breadcrumb>` is a template for incubator components.
        *
@@ -31,21 +49,38 @@ See <a href="https://vaadin.com/license/cval-3">the website</a> for the complete
        * @memberof Vaadin
        * @demo demo/index.html
        */
-      class IncubatorBreadcrumb extends Vaadin.ElementMixin(Vaadin.ThemableMixin(Polymer.Element)) {
+      class IncubatorBreadcrumbStep extends Vaadin.ElementMixin(Vaadin.ThemableMixin(Polymer.Element)) {
         static get is() {
           return 'incubator-breadcrumb';
         }
+
+        static get properties() {
+          return {
+
+            href: {
+              type: String,
+              value: ''
+            },
+
+            shift: {
+              type: Boolean,
+              value: false,
+              reflectToAttribute: true
+            }
+
+          };
+        }
       }
 
-      customElements.define(IncubatorBreadcrumb.is, IncubatorBreadcrumb);
+      customElements.define(IncubatorBreadcrumbStep.is, IncubatorBreadcrumbStep);
 
       /**
        * @namespace Vaadin
        */
-      window.Vaadin.IncubatorBreadcrumb = IncubatorBreadcrumb;
+      window.Vaadin.IncubatorBreadcrumbStep = IncubatorBreadcrumbStep;
 
       if (window.Vaadin.runIfDevelopmentMode) {
-        window.Vaadin.runIfDevelopmentMode('vaadin-license-checker', IncubatorBreadcrumb);
+        window.Vaadin.runIfDevelopmentMode('vaadin-license-checker', IncubatorBreadcrumbStep);
       }
     })();
   </script>

@@ -6,7 +6,7 @@
       "description": "",
       "summary": "",
       "sourceRange": {
-        "file": "src/incubator-breadcrumb.html",
+        "file": "src/incubator-breadcrumbs.html",
         "start": {
           "line": 44,
           "column": 6
@@ -18,9 +18,9 @@
       },
       "elements": [
         {
-          "description": "`<incubator-breadcrumb>` is a template for incubator components.\n\n```\n<incubator-breadcrumb>\n</incubator-breadcrumb>\n```",
+          "description": "`<incubator-breadcrumbs>` is a template for incubator components.\n\n```\n<incubator-breadcrumbs>\n</incubator-breadcrumbs>\n```",
           "summary": "",
-          "path": "src/incubator-breadcrumb.html",
+          "path": "src/incubator-breadcrumbs.html",
           "properties": [],
           "methods": [],
           "staticMethods": [],
@@ -51,7 +51,7 @@
             "selectors": []
           },
           "slots": [],
-          "tagname": "incubator-breadcrumb"
+          "tagname": "incubator-breadcrumbs"
         }
       ]
     }
