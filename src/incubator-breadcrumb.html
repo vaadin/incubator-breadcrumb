@@ -49,7 +49,7 @@ See <a href="https://vaadin.com/license/cval-3">the website</a> for the complete
        * @memberof Vaadin
        * @demo demo/index.html
        */
-      class IncubatorBreadcrumbStep extends Vaadin.ElementMixin(Vaadin.ThemableMixin(Polymer.Element)) {
+      class IncubatorBreadcrumb extends Vaadin.ElementMixin(Vaadin.ThemableMixin(Polymer.Element)) {
         static get is() {
           return 'incubator-breadcrumb';
         }
@@ -72,15 +72,15 @@ See <a href="https://vaadin.com/license/cval-3">the website</a> for the complete
         }
       }
 
-      customElements.define(IncubatorBreadcrumbStep.is, IncubatorBreadcrumbStep);
+      customElements.define(IncubatorBreadcrumb.is, IncubatorBreadcrumb);
 
       /**
        * @namespace Vaadin
        */
-      window.Vaadin.IncubatorBreadcrumbStep = IncubatorBreadcrumbStep;
+      window.Vaadin.IncubatorBreadcrumb = IncubatorBreadcrumb;
 
       if (window.Vaadin.runIfDevelopmentMode) {
-        window.Vaadin.runIfDevelopmentMode('vaadin-license-checker', IncubatorBreadcrumbStep);
+        window.Vaadin.runIfDevelopmentMode('vaadin-license-checker', IncubatorBreadcrumb);
       }
     })();
   </script>
