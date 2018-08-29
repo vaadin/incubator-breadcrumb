@@ -1,6 +1,6 @@
 # &lt;incubator-breadcrumbs&gt;
 
-[&lt;incubator-breadcrumbs&gt;](https://vaadin.com/components/incubator-breadcrumbs) is a Web Component providing an easy way to display breadcrumb.
+[&lt;incubator-breadcrumbs&gt;](https://vaadin.com/directory/component/vaadinincubator-breadcrumb) is a Web Component providing an easy way to display breadcrumb.
 
 [<img src="https://raw.githubusercontent.com/vaadin/incubator-breadcrumb/master/screenshot.png" width="200" alt="Screenshot of incubator-breadcrumbs">](https://vaadin.com/components/directory/vaadinincubator-breadcrumbs)
 
