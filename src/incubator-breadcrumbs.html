@@ -67,15 +67,9 @@ See <a href="https://vaadin.com/license/cval-3">the website</a> for the complete
           };
         }
 
-        ready() {
-          super.ready();
-          const steps = this.querySelectorAll('incubator-breadcrumb');
-          if (steps.length > 0) {
-            this.set('steps', steps);
-          }
-        }
-
         _isMobile() {
+          this._getSteps();
+
           if(this.mobile && this.steps.length > 0) {
             this.steps.forEach(step => {
               if(step.href && step.shift) {
@@ -86,6 +80,13 @@ See <a href="https://vaadin.com/license/cval-3">the website</a> for the complete
             this.steps.forEach(step => {
               step.style.display = 'inline';
             });
+          }
+        }
+
+        _getSteps() {
+          const steps = this.querySelectorAll('incubator-breadcrumb');
+          if (steps.length > 0) {
+            this.set('steps', steps);
           }
         }
       }
