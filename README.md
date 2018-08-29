@@ -5,7 +5,7 @@
 
 [Live Demo ↗](https://incubator.app.fi/incubator-breadcrumbs)
 
-[&lt;incubator-breadcrumbs&gt;](https://vaadin.com/components/incubator-breadcrumbs) is a Web Component providing an easy way to display breadcrumb on web pages.
+[&lt;incubator-breadcrumbs&gt;](https://vaadin.com/directory/component/vaadinincubator-breadcrumb) is a Web Component providing an easy way to display breadcrumb on web pages.
 
 ```html
   <incubator-breadcrumbs>
