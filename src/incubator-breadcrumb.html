@@ -24,15 +24,18 @@ See <a href="https://vaadin.com/license/cval-3">the website</a> for the complete
         content: '>';
         speak: none;
       }
+
+      .hidden {
+        display: none;
+      }
     </style>
 
     <span part="link">
-      <template is="dom-if" if="[[href]]">
-        <a href="[[href]]"><slot></slot></a>
-      </template>
-      <template is="dom-if" if="[[href === '']]">
-        <slot></slot>
-      </template>
+      <slot id="pageLabel"></slot>
+      <span id="label" tabindex="0" class$="[[_getLabelClassName()]]">
+      </span>
+      <a id="link" href="[[href]]" class$="[[_getLinkClassName()]]">
+      </a>
     </span>
     <span part="separator"></span>
   </template>
@@ -58,8 +61,15 @@ See <a href="https://vaadin.com/license/cval-3">the website</a> for the complete
         ready() {
           super.ready();
 
+          const link = this.$.link;
+          const label = this.$.label;
+          const slot = this.$.pageLabel;
+
           if (!this.href) {
+            label.appendChild(slot);
             this.setAttribute('aria-current', 'page');
+          } else {
+            link.appendChild(slot);
           }
         }
 
@@ -78,6 +88,18 @@ See <a href="https://vaadin.com/license/cval-3">the website</a> for the complete
             }
 
           };
+        }
+
+        _getLabelClassName() {
+          if (this.href !== '') {
+            return 'hidden';
+          }
+        }
+
+        _getLinkClassName() {
+          if (this.href === '') {
+            return 'hidden';
+          }
         }
       }
 
